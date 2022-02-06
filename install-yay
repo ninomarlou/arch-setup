@@ -5,4 +5,5 @@ git clone https://aur.archlinux.org/yay-git.git
 chown -R nino ~/.opt/yay-git
 cd ~/.opt/yay-git
 makepkg -si
+rm -rf ~/.opt
 #echo Done
