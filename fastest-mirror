@@ -1,0 +1,17 @@
+package=pacman-contrib
+if pacman -Qs $package > /dev/null ; then
+  echo "Required dependencies found."
+else
+  echo "Installing dependencies: $package"
+  yes | pacman -S pacman-contrib
+fi
+
+echo "Backing up current mirror list."
+cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak 
+
+echo "Ranking servers."
+rankmirrors /etc/pacman.d/mirrorlist.bak > /etc/pacman.d/mirrorlist
+
+echo "Performing updates."
+pacman -Syyu
+echo Done

@@ -1,0 +1,19 @@
+echo 'Finding fastest mirrors..'
+sudo ./fastest-mirror
+
+clear
+echo 'Finding fastest mirrors..Done.'
+echo 'Installing yay..'
+./install-yay
+
+clear
+echo 'Finding fastest mirrors..Done.'
+echo 'Installing yay..Done.'
+echo 'Installing my apps..'
+./install-my-apps
+
+clear
+echo 'Finding fastest mirrors..Done.'
+echo 'Installing yay..Done.'
+echo 'Installing my apps..Done.'
+echo 'Setup complete.'

@@ -1,0 +1,15 @@
+# SMAPI
+cd ~/Downloads
+rm -rf smapi-temp 
+mkdir smapi-temp
+cd smapi-temp
+echo Enter SMAPI version to use:
+read smapiver
+cmd="wget https://github.com/Pathoschild/SMAPI/releases/download/$smapiver/SMAPI-$smapiver-installer.zip"
+eval "$cmd"
+cmd="unzip SMAPI-$smapiver-installer.zip"
+eval "$cmd"
+cmd='cd "SMAPI $smapiver installer"'
+eval "$cmd"
+clear
+./install\ on\ Linux.sh

@@ -1,0 +1,49 @@
+# Apps to install
+YAY_APPS="sublime-text-4 pamac-aur"
+PAMAC_APPS="wget dconf-editor pycharm-community-edition steam"
+
+echo $'\n'"--- Enabling multilib."
+# Allow multilib
+sudo sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf 
+
+echo $'\n'"--- Refreshing and updating databases."
+echo ""
+# Refresh app databases
+sudo pacman -Sy archlinux-keyring && sudo pacman -Su
+
+
+echo $'\n'"--- Installing yay apps."
+echo ""
+# Install yay apps
+for app in $YAY_APPS
+do
+	cmd='
+		if yay -Qs $app > /dev/null ; then
+		  echo "$app already installed."
+		else
+		  echo "Installing app: $app"
+		  yay -Sy $app
+		fi
+	'
+	eval "$cmd"
+done
+
+echo $'\n'"--- Installing pacman apps."
+echo ""
+# Install pacman apps
+for app in $PAMAC_APPS
+do
+	cmd='
+		if pacman -Qs $app > /dev/null ; then
+		  echo "$app already installed."
+		else
+		  echo "Installing app: $app"
+		  sudo pacman -Sy $app
+		fi
+	'
+	eval "$cmd"
+done
+echo ""
+
+
+
