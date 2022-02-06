@@ -1,6 +1,6 @@
 # Apps to install
 YAY_APPS="sublime-text-4 pamac-aur"
-PAMAC_APPS="wget dconf-editor pycharm-community-edition steam"
+PAMAC_APPS="wget dconf-editor pycharm-community-edition steam mpv"
 
 echo $'\n'"--- Enabling multilib."
 # Allow multilib
