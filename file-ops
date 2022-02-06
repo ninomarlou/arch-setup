@@ -1,9 +1,16 @@
+
+# Make standard folders.
+cd ~
+mkdir -p .themes .icons
+
+# Hide select apps from app launchers.
+
 FILES='avahi-discover bssh bvnc java-java11-openjdk jshell-java11-openjdk jconsole-java11-openjdk'
 
 for file in $FILES
 do
 	cmd='
-		rm ~/.local/share/applications/$file.desktop
+		rm -rf ~/.local/share/applications/$file.desktop
 	'
 	eval "$cmd"
 	cmd='
