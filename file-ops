@@ -22,3 +22,15 @@ do
 	'
 	eval "$cmd"
 done
+
+# Clone repos
+cd ~/Documents
+rm -rf python-projects
+mkdir python-projects
+rm -rf utility-scripts
+mkdir utility-scripts
+cd python-projects
+git clone https://github.com/ninomarlou/code-wars.git
+cd ..
+cd utility-scripts
+git clone https://github.com/ninomarlou/arch-setup.git
