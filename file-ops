@@ -1,0 +1,19 @@
+FILES='avahi-discover bssh bvnc java-java11-openjdk jshell-java11-openjdk jconsole-java11-openjdk'
+
+SOURCE='/usr/share/applications'
+
+for file in $FILES
+do
+	cmd='
+		rm ~/.local/share/applications/$file.desktop
+	'
+	eval "$cmd"
+	cmd='
+		cp /usr/share/applications/$file.desktop ~/.local/share/applications
+	'
+	eval "$cmd"
+	cmd='
+		echo "Hidden=true" >> ~/.local/share/applications/$file.desktop
+	'
+	eval "$cmd"
+done
