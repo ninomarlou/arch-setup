@@ -1,5 +1,0 @@
-# Setup git
-git config --global user.email "ninomarlougonzales@gmail.com"
-git config --global user.name "ninomarlou"
-git config --global credential.helper store
-git pull
