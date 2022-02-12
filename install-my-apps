@@ -1,5 +1,5 @@
 # Apps to install
-YAY_APPS="sublime-text-4 pamac-aur"
+YAY_APPS="sublime-text-4 pamac-aur vscodium pop-theme pop-fonts pop-icon-theme-git"
 PAMAC_APPS="wget dconf-editor steam mpv"
 
 echo $'\n'"--- Enabling multilib."
