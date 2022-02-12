@@ -1,6 +1,6 @@
 # Apps to install
-YAY_APPS="sublime-text-4 pamac-aur vscodium pop-theme pop-fonts pop-icon-theme-git"
-PAMAC_APPS="wget dconf-editor steam mpv"
+YAY_APPS="sublime-text-4 pamac-aur vscodium pop-theme pop-fonts pop-icon-theme-git gnome-shell-extension-dash-to-plank"
+PAMAC_APPS="wget dconf-editor steam mpv chromium"
 
 echo $'\n'"--- Enabling multilib."
 # Allow multilib
