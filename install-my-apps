@@ -2,42 +2,43 @@
 YAY_APPS="sublime-text-4 pamac-aur vscodium pop-theme gnome-shell-extension-dash-to-plank"
 PAMAC_APPS="wget dconf-editor steam mpv chromium"
 
-echo $'\n'"--- Enabling multilib."
+echo "--- Enabling multilib.."$'\n'
 # Allow multilib
 sudo sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf 
+clear 
+echo "--- Enabling multilib..Done."
 
-echo $'\n'"--- Refreshing and updating databases."
-echo ""
+echo "--- Refreshing and updating databases.."$'\n'
 # Refresh app databases
 sudo pacman -Sy archlinux-keyring && sudo pacman -Su
+clear
+echo "--- Enabling multilib..Done."
+echo "--- Refreshing and updating databases..Done."
 
-
-echo $'\n'"--- Installing yay apps."
-echo ""
+echo "--- Installing yay apps."
 # Install yay apps
 for app in $YAY_APPS
 do
 	cmd='
 		if yay -Qs $app > /dev/null ; then
-		  echo "$app already installed."
+		  echo "    $app already installed."
 		else
-		  echo "Installing app: $app"
+		  echo "    Installing app: $app"
 		  yay -Sy $app
 		fi
 	'
 	eval "$cmd"
 done
 
-echo $'\n'"--- Installing pacman apps."
-echo ""
+echo "--- Installing pacman apps."
 # Install pacman apps
 for app in $PAMAC_APPS
 do
 	cmd='
 		if pacman -Qs $app > /dev/null ; then
-		  echo "$app already installed."
+		  echo "    $app already installed."
 		else
-		  echo "Installing app: $app"
+		  echo "    Installing app: $app"
 		  sudo pacman -Sy $app
 		fi
 	'
