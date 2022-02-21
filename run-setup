@@ -1,5 +1,5 @@
 echo 'Finding fastest mirrors..'
-sudo ./fastest-mirror
+sudo ./find-fastest-mirror
 
 clear
 echo 'Finding fastest mirrors..Done.'
@@ -17,7 +17,7 @@ echo 'Finding fastest mirrors..Done.'
 echo 'Installing yay..Done.'
 echo 'Installing my apps..Done.'
 echo 'Doing file operations..'
-./file-ops
+./perform-file-ops
 
 clear
 echo 'Finding fastest mirrors..Done.'
