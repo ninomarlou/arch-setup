@@ -1,9 +1,15 @@
-rm -rf ~/.opt
-mkdir ~/.opt
-cd ~/.opt
-git clone https://aur.archlinux.org/yay-git.git
-chown -R nino ~/.opt/yay-git
-cd ~/.opt/yay-git
-makepkg -si
-rm -rf ~/.opt
-#echo Done
+package=yay
+if yay -Qs $package > /dev/null ; then
+  echo "Yay already installed."
+else
+  echo "Installing $package"
+  rm -rf ~/.opt
+  mkdir ~/.opt
+  cd ~/.opt
+  git clone https://aur.archlinux.org/yay-git.git
+  chown -R nino ~/.opt/yay-git
+  cd ~/.opt/yay-git
+  makepkg -si
+  rm -rf ~/.opt
+  #echo Done
+fi
