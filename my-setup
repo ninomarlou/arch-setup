@@ -16,4 +16,12 @@ clear
 echo 'Finding fastest mirrors..Done.'
 echo 'Installing yay..Done.'
 echo 'Installing my apps..Done.'
+echo 'Doing file operations..'
+./file-ops
+
+clear
+echo 'Finding fastest mirrors..Done.'
+echo 'Installing yay..Done.'
+echo 'Installing my apps..Done.'
+echo 'Doing file operations..Done.'
 echo 'Setup complete.'
