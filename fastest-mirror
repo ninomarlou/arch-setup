@@ -1,17 +1,31 @@
+echo "--- Checking for dependencies.."
 package=pacman-contrib
 if pacman -Qs $package > /dev/null ; then
-  echo "Required dependencies found."
+  echo "    Required dependencies found."
 else
-  echo "Installing dependencies: $package"
-  yes | pacman -S pacman-contrib
+  echo "    Installing dependencies: $package"
+  yes | sudo pacman -S pacman-contrib
 fi
+clear
+echo "--- Checking for dependencies..Done."
 
-echo "Backing up current mirror list."
+echo "--- CBacking up current mirror list.."
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak 
+clear
+echo "--- Checking for dependencies..Done."
+echo "--- CBacking up current mirror list..Done."
 
-echo "Ranking servers."
-rankmirrors /etc/pacman.d/mirrorlist.bak > /etc/pacman.d/mirrorlist
+echo "--- Ranking servers.."
+sudo rankmirrors /etc/pacman.d/mirrorlist.bak > /etc/pacman.d/mirrorlist
+clear
+echo "--- Checking for dependencies..Done."
+echo "--- CBacking up current mirror list..Done."
+echo "--- Ranking servers..Done."
 
-echo "Performing updates."
-pacman -Syyu
-echo Done
+echo "--- Performing updates.."
+sudo pacman -Syyu
+clear
+echo "--- Checking for dependencies..Done."
+echo "--- CBacking up current mirror list..Done."
+echo "--- Ranking servers..Done."
+echo "--- Performing updates..Done."

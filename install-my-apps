@@ -2,13 +2,13 @@
 YAY_APPS="sublime-text-4 pamac-aur vscodium pop-theme gnome-shell-extension-dash-to-plank"
 PAMAC_APPS="wget dconf-editor steam mpv chromium"
 
-echo "--- Enabling multilib.."$'\n'
+echo "--- Enabling multilib.."
 # Allow multilib
 sudo sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf 
 clear 
 echo "--- Enabling multilib..Done."
 
-echo "--- Refreshing and updating databases.."$'\n'
+echo "--- Refreshing and updating databases.."
 # Refresh app databases
 sudo pacman -Sy archlinux-keyring && sudo pacman -Su
 clear
