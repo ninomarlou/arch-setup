@@ -7,7 +7,7 @@ else
   mkdir ~/.opt
   cd ~/.opt
   git clone https://aur.archlinux.org/yay-git.git
-  chown -R nino ~/.opt/yay-git
+  chown -R $USER ~/.opt/yay-git
   cd ~/.opt/yay-git
   makepkg -si
   rm -rf ~/.opt
