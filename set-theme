@@ -1,0 +1,11 @@
+gsettings set org.gnome.desktop.interface gtk-theme "Pop-dark"
+gsettings set org.gnome.desktop.interface cursor-theme "Pop"
+gsettings set org.gnome.desktop.interface icon-theme "Pop"
+
+# budgie specific theme options
+if pacman -Qs budgie-desktop > /dev/null ; then
+  gsettings set com.solus-project.budgie-panel builtin-theme "false"
+else
+  echo "Budgie panel cannot be configured because budgie-desktop is not installed."
+fi
+ 	

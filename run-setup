@@ -24,4 +24,13 @@ echo 'Finding fastest mirrors..Done.'
 echo 'Installing yay..Done.'
 echo 'Installing my apps..Done.'
 echo 'Doing file operations..Done.'
+echo 'Setting theme..'
+./set-theme
+
+clear
+echo 'Finding fastest mirrors..Done.'
+echo 'Installing yay..Done.'
+echo 'Installing my apps..Done.'
+echo 'Doing file operations..Done.'
+echo 'Setting theme..Done.'
 echo 'Setup complete.'
