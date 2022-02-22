@@ -30,7 +30,7 @@ FILES='plank'
 for file in $FILES
 do
 	cmd='
-		rm -rf ~/.config/autostart/$file.desktop
+		mkdir ~/.config/autostart
 	'
 	eval "$cmd"
 	cmd='
