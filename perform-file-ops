@@ -23,6 +23,22 @@ do
 	eval "$cmd"
 done
 
+# Autostart apps
+
+FILES='plank'
+
+for file in $FILES
+do
+	cmd='
+		rm -rf ~/.config/autostart/$file.desktop
+	'
+	eval "$cmd"
+	cmd='
+		cp /usr/share/applications/$file.desktop ~/.config/autostart
+	'
+	eval "$cmd"
+done
+
 # Clone repos
 cd ~/Documents
 rm -rf python-projects
