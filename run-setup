@@ -19,7 +19,7 @@ fi
 
 # ------------------------------ INSTALL BASE YAY APPS  ------------------------------
 
-YAY_BASE_APPS="pamac-aur vscodium nordic-wallpapers-git"
+YAY_BASE_APPS="pamac-aur vscodium-bin nordic-wallpapers-git"
 
 # Install yay apps
 for app in $YAY_BASE_APPS
@@ -41,17 +41,17 @@ YAY_PANTHEON_APPS="switchboard-plug-pantheon-tweaks-git"
 YAY_BUDGIE_APPS=""
 YAY_GNOME_APPS=""
 
-if [ $DE = "pantheon" ]; then
+if [ $DE="pantheon" ]; then
     cmd='
         apps_to_install=$YAY_PANTHEON_APPS
         '
     eval "$cmd"
-elif [ $DE = ".budgie" ]; then
+elif [ $DE=".budgie" ]; then
     cmd='
         apps_to_install=$YAY_BUDGIE_APPS
         '
     eval "$cmd"
-elif [ $DE = "gnome" ]; then
+elif [ $DE="gnome" ]; then
     cmd='
         apps_to_install=$YAY_GNOME_APPS
         '
@@ -106,17 +106,17 @@ AUTOSTART_PANTHEON_APPS="plank"
 AUTOSTART_GNOME_APPS="plank"
 AUTOSTART_BUDGIE_APPS="plank"
 
-if [ $DE = "pantheon" ]; then
+if [ $DE="pantheon" ]; then
     cmd='
         apps_to_start=$AUTOSTART_PANTHEON_APPS
         '
     eval "$cmd"
-elif [ $DE = "budgie" ]; then
+elif [ $DE="budgie" ]; then
     cmd='
         apps_to_start=$AUTOSTART_BUDGIE_APPS
         '
     eval "$cmd"
-elif [ $DE = "gnome" ]; then
+elif [ $DE="gnome" ]; then
     cmd='
         apps_to_start=$AUTOSTART_GNOME_APPS
         '
@@ -161,15 +161,15 @@ git clone https://github.com/ninomarlou/arch-init.git
 gsettings set org.gnome.desktop.background picture-uri "file:///usr/share/backgrounds/nordic-wallpapers-git/gnu-linux.png"
 
 #de specific theme settings
-if [ $DE = "pantheon" ]; then
+if [ $DE="pantheon" ]; then
     cmd='
         gsettings set org.gnome.desktop.interface gtk-theme "io.elementary.stylesheet.cocoa"
         gsettings set org.gnome.desktop.interface cursor-theme "elementary"
         gsettings set org.gnome.desktop.interface icon-theme "elementary"
-        gsettings set org.pantheon.desktop.gala.appearance button-layout "close,minimize,maximize"
+        gsettings set org.pantheon.desktop.gala.appearance button-layout "close:minimize:maximize"
         '
     eval "$cmd"
-elif [ $DE = "budgie" ]; then
+elif [ $DE="budgie" ]; then
     cmd='
         gsettings set org.gnome.desktop.interface gtk-theme "Pop-dark"
         gsettings set org.gnome.desktop.interface cursor-theme "Pop"
@@ -177,7 +177,7 @@ elif [ $DE = "budgie" ]; then
         gsettings set com.solus-project.budgie-panel builtin-theme "false"
         '
     eval "$cmd"
-elif [ $DE = "gnome" ]; then
+elif [ $DE="gnome" ]; then
     cmd='
         gsettings set org.gnome.desktop.interface gtk-theme "Pop-dark"
         gsettings set org.gnome.desktop.interface cursor-theme "Pop"
