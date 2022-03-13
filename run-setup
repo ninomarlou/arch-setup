@@ -19,7 +19,7 @@ fi
 
 # ------------------------------ INSTALL BASE YAY APPS  ------------------------------
 
-YAY_BASE_APPS="pamac-aur vscodium"
+YAY_BASE_APPS="pamac-aur vscodium nordic-wallpapers-git"
 
 # Install yay apps
 for app in $YAY_BASE_APPS
@@ -162,3 +162,7 @@ cd ..
 cd utility-scripts
 git clone https://github.com/ninomarlou/arch-setup.git
 git clone https://github.com/ninomarlou/arch-init.git
+
+# ------------------------------ THEMES ------------------------------
+# Set wallpaper
+gsettings set org.gnome.desktop.background picture-uri "file:///usr/share/backgrounds/nordic-wallpapers-git/gnu-linux.png"
