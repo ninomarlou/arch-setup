@@ -1,9 +1,7 @@
-echo 'Finding fastest mirrors..'
-sudo ./find-fastest-mirror
+backuppath=/home
+de=( "$backuppath"/*.* )
+echo $de
 
-clear
-echo 'Finding fastest mirrors..Done.'
-echo 'Installing yay..'
 ./install-yay
 
 clear
