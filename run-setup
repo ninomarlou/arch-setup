@@ -48,7 +48,6 @@ YAY_PANTHEON_APPS="switchboard-plug-pantheon-tweaks-git"
 YAY_BUDGIE_APPS=""
 YAY_GNOME_APPS=""
 
-echo $de
 if [ $de = ".de_pantheon" ]; then
     cmd='
         apps_to_install=$YAY_PANTHEON_APPS
@@ -110,10 +109,36 @@ do
 done
 
 # Autostart apps
+AUTOSTART_PANTHEON_APPS="plank"
+AUTOSTART_GNOME_APPS="plank"
+AUTOSTART_BUDGIE_APPS="plank"
+
+if [ $de = ".de_pantheon" ]; then
+    cmd='
+        apps_to_start=$AUTOSTART_PANTHEON_APPS
+        '
+    eval "$cmd"
+elif [ $de = ".de_budgie" ]; then
+    cmd='
+        apps_to_start=$AUTOSTART_BUDGIE_APPS
+        '
+    eval "$cmd"
+elif [ $de = ".de_gnome" ]; then
+    cmd='
+        apps_to_start=$AUTOSTART_GNOME_APPS
+        '
+    eval "$cmd"
+else
+    cmd='
+        echo "Not autostarting any app."
+        '
+    eval "$cmd"
+fi
+
 
 FILES='plank'
 
-for file in $FILES
+for file in $apps_to_start
 do
 	cmd='
 		mkdir /home/$USER/.config/autostart
