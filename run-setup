@@ -166,3 +166,34 @@ git clone https://github.com/ninomarlou/arch-init.git
 # ------------------------------ THEMES ------------------------------
 # Set wallpaper
 gsettings set org.gnome.desktop.background picture-uri "file:///usr/share/backgrounds/nordic-wallpapers-git/gnu-linux.png"
+
+#de specific theme settings
+if [ $de = ".de_pantheon" ]; then
+    cmd='
+        gsettings set org.gnome.desktop.interface gtk-theme "io.elementary.stylesheet.cocoa"
+        gsettings set org.gnome.desktop.interface cursor-theme "elementary"
+        gsettings set org.gnome.desktop.interface icon-theme "elementary"
+        gsettings set org.gnome.desktop.gala.appearance button-layout "close,minimize,maximize"
+        '
+    eval "$cmd"
+elif [ $de = ".de_budgie" ]; then
+    cmd='
+        gsettings set org.gnome.desktop.interface gtk-theme "Pop-dark"
+        gsettings set org.gnome.desktop.interface cursor-theme "Pop"
+        gsettings set org.gnome.desktop.interface icon-theme "Pop"
+        gsettings set com.solus-project.budgie-panel builtin-theme "false"
+        '
+    eval "$cmd"
+elif [ $de = ".de_gnome" ]; then
+    cmd='
+        gsettings set org.gnome.desktop.interface gtk-theme "Pop-dark"
+        gsettings set org.gnome.desktop.interface cursor-theme "Pop"
+        gsettings set org.gnome.desktop.interface icon-theme "Pop"
+        '
+    eval "$cmd"
+else
+    cmd='
+        echo "Not theming operations performed."
+        '
+    eval "$cmd"
+fi
