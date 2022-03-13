@@ -19,7 +19,7 @@ fi
 
 # ------------------------------ INSTALL BASE YAY APPS  ------------------------------
 
-YAY_BASE_APPS="sublime-text-4 pamac-aur vscodium"
+YAY_BASE_APPS="pamac-aur vscodium"
 
 # Install yay apps
 for app in $YAY_BASE_APPS
@@ -90,7 +90,7 @@ mkdir -p .themes .icons
 
 # Hide select apps from app launchers.
 
-FILES='avahi-discover bssh bvnc java-java11-openjdk jshell-java11-openjdk jconsole-java11-openjdk qv4l2 qvidcap'
+FILES='plank avahi-discover bssh bvnc java-java11-openjdk jshell-java11-openjdk jconsole-java11-openjdk qv4l2 qvidcap'
 
 for file in $FILES
 do
