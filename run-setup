@@ -39,9 +39,7 @@ done
 
 currdir=$(pwd)
 cd /home
-dex=".de_*"
-de=$dex
-
+de=".de_*"
 
 # ------------------------------ INSTALL YAY APPS BASED ON DE ------------------------------
 
@@ -109,6 +107,9 @@ do
 	eval "$cmd"
 done
 
+cd /home
+de=".de_*"
+
 # Autostart apps
 AUTOSTART_PANTHEON_APPS="plank"
 AUTOSTART_GNOME_APPS="plank"
@@ -167,6 +168,9 @@ git clone https://github.com/ninomarlou/arch-init.git
 # ------------------------------ THEMES ------------------------------
 # Set wallpaper
 gsettings set org.gnome.desktop.background picture-uri "file:///usr/share/backgrounds/nordic-wallpapers-git/gnu-linux.png"
+cd /home
+de=".de_*"
+
 echo $de
 #de specific theme settings
 if [ $de = ".de_pantheon" ]; then
