@@ -29,7 +29,7 @@ do
 		  echo "    $app already installed."
 		else
 		  echo "    Installing app: $app"
-		  yay --noconfirm -Sy $app
+		  yay --answerdiff=None -Sy $app
 		fi
 	'
 	eval "$cmd"
@@ -70,7 +70,7 @@ do
           echo "$app already installed."
         else
           echo "Installing app: $app"
-          yay --noconfirm -S $app
+          yay --answerdiff=None -S $app
         fi
     '
     eval "$cmd"
