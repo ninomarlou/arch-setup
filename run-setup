@@ -167,6 +167,7 @@ if [ $DE="pantheon" ]; then
         gsettings set org.gnome.desktop.interface cursor-theme "elementary"
         gsettings set org.gnome.desktop.interface icon-theme "elementary"
         gsettings set org.pantheon.desktop.gala.appearance button-layout "close:minimize:maximize"
+        gsettings set org.gnome.desktop.wm.preferences button-layout "close:minimize:maximize"
         '
     eval "$cmd"
 elif [ $DE="budgie" ]; then
