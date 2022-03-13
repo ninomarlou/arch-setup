@@ -35,29 +35,23 @@ do
 	eval "$cmd"
 done
 
-# ------------------------------ GET INSTALLED DESKTOP ENVIRONMENT  ------------------------------
-
-currdir=$(pwd)
-cd /home
-de=".de_*"
-
 # ------------------------------ INSTALL YAY APPS BASED ON DE ------------------------------
 
 YAY_PANTHEON_APPS="switchboard-plug-pantheon-tweaks-git"
 YAY_BUDGIE_APPS=""
 YAY_GNOME_APPS=""
 
-if [ $de = ".de_pantheon" ]; then
+if [ $DE = "pantheon" ]; then
     cmd='
         apps_to_install=$YAY_PANTHEON_APPS
         '
     eval "$cmd"
-elif [ $de = ".de_budgie" ]; then
+elif [ $DE = ".budgie" ]; then
     cmd='
         apps_to_install=$YAY_BUDGIE_APPS
         '
     eval "$cmd"
-elif [ $de = ".de_gnome" ]; then
+elif [ $DE = "gnome" ]; then
     cmd='
         apps_to_install=$YAY_GNOME_APPS
         '
@@ -107,25 +101,22 @@ do
 	eval "$cmd"
 done
 
-cd /home
-de=".de_*"
-
 # Autostart apps
 AUTOSTART_PANTHEON_APPS="plank"
 AUTOSTART_GNOME_APPS="plank"
 AUTOSTART_BUDGIE_APPS="plank"
 
-if [ $de = ".de_pantheon" ]; then
+if [ $DE = "pantheon" ]; then
     cmd='
         apps_to_start=$AUTOSTART_PANTHEON_APPS
         '
     eval "$cmd"
-elif [ $de = ".de_budgie" ]; then
+elif [ $DE = "budgie" ]; then
     cmd='
         apps_to_start=$AUTOSTART_BUDGIE_APPS
         '
     eval "$cmd"
-elif [ $de = ".de_gnome" ]; then
+elif [ $DE = "gnome" ]; then
     cmd='
         apps_to_start=$AUTOSTART_GNOME_APPS
         '
@@ -168,12 +159,9 @@ git clone https://github.com/ninomarlou/arch-init.git
 # ------------------------------ THEMES ------------------------------
 # Set wallpaper
 gsettings set org.gnome.desktop.background picture-uri "file:///usr/share/backgrounds/nordic-wallpapers-git/gnu-linux.png"
-cd /home
-de=".de_*"
 
-echo $de
 #de specific theme settings
-if [ $de = ".de_pantheon" ]; then
+if [ $DE = "pantheon" ]; then
     cmd='
         gsettings set org.gnome.desktop.interface gtk-theme "io.elementary.stylesheet.cocoa"
         gsettings set org.gnome.desktop.interface cursor-theme "elementary"
@@ -181,7 +169,7 @@ if [ $de = ".de_pantheon" ]; then
         gsettings set org.pantheon.desktop.gala.appearance button-layout "close,minimize,maximize"
         '
     eval "$cmd"
-elif [ $de = ".de_budgie" ]; then
+elif [ $DE = "budgie" ]; then
     cmd='
         gsettings set org.gnome.desktop.interface gtk-theme "Pop-dark"
         gsettings set org.gnome.desktop.interface cursor-theme "Pop"
@@ -189,7 +177,7 @@ elif [ $de = ".de_budgie" ]; then
         gsettings set com.solus-project.budgie-panel builtin-theme "false"
         '
     eval "$cmd"
-elif [ $de = ".de_gnome" ]; then
+elif [ $DE = "gnome" ]; then
     cmd='
         gsettings set org.gnome.desktop.interface gtk-theme "Pop-dark"
         gsettings set org.gnome.desktop.interface cursor-theme "Pop"
