@@ -136,3 +136,4 @@ git clone https://github.com/ninomarlou/code-wars.git
 cd ..
 cd utility-scripts
 git clone https://github.com/ninomarlou/arch-setup.git
+git clone https://github.com/ninomarlou/arch-init.git
