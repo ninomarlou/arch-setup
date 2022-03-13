@@ -39,7 +39,8 @@ done
 
 currdir=$(pwd)
 cd /home
-de=".de_*"
+dex=".de_*"
+de=$dex
 
 
 # ------------------------------ INSTALL YAY APPS BASED ON DE ------------------------------
