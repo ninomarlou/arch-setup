@@ -109,7 +109,6 @@ done
 
 cd /home
 de=".de_*"
-cd $currdir
 
 # Autostart apps
 AUTOSTART_PANTHEON_APPS="plank"
@@ -171,7 +170,6 @@ git clone https://github.com/ninomarlou/arch-init.git
 gsettings set org.gnome.desktop.background picture-uri "file:///usr/share/backgrounds/nordic-wallpapers-git/gnu-linux.png"
 cd /home
 de=".de_*"
-cd $currdir
 
 echo $de
 #de specific theme settings
