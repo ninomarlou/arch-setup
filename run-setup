@@ -1,34 +1,73 @@
-backuppath=/home
-de=( "$backuppath"/*.* )
-echo $de
 
+
+# ------------------------------ INSTALL YAY AUR HELPER  ------------------------------
+
+#cd $currdir
 ./install-yay
 
-clear
-echo 'Finding fastest mirrors..Done.'
-echo 'Installing yay..Done.'
-echo 'Installing my apps..'
-./install-my-apps
+# ------------------------------ INSTALL BASE YAY APPS  ------------------------------
 
-clear
-echo 'Finding fastest mirrors..Done.'
-echo 'Installing yay..Done.'
-echo 'Installing my apps..Done.'
-echo 'Doing file operations..'
-./perform-file-ops
+YAY_BASE_APPS="sublime-text-4 pamac-aur vscodium"
 
-clear
-echo 'Finding fastest mirrors..Done.'
-echo 'Installing yay..Done.'
-echo 'Installing my apps..Done.'
-echo 'Doing file operations..Done.'
-echo 'Setting theme..'
-./set-theme
+# Install yay apps
+for app in $YAY_BASE_APPS
+do
+	cmd='
+		if yay -Qs $app > /dev/null ; then
+		  echo "    $app already installed."
+		else
+		  echo "    Installing app: $app"
+		  yay --noconfirm -Sy $app
+		fi
+	'
+	eval "$cmd"
+done
 
-clear
-echo 'Finding fastest mirrors..Done.'
-echo 'Installing yay..Done.'
-echo 'Installing my apps..Done.'
-echo 'Doing file operations..Done.'
-echo 'Setting theme..Done.'
-echo 'Setup complete.'
+# ------------------------------ GET INSTALLED DESKTOP ENVIRONMENT  ------------------------------
+
+currdir=$(pwd)
+cd /home
+de=".de_* "
+
+
+# ------------------------------ INSTALL YAY APPS BASED ON DE ------------------------------
+
+YAY_PANTHEON_APPS="switchboard-plug-pantheon-tweaks-git"
+YAY_BUDGIE_APPS=""
+YAY_GNOME_APPS=""
+
+echo $de
+if [ $de = ".de_pantheon" ]; then
+    cmd='
+        apps_to_install=$YAY_PANTHEON_APPS
+        '
+    eval "$cmd"
+elif [ $de = ".de_budgie" ]; then
+    cmd='
+        apps_to_install=$YAY_BUDGIE_APPS
+        '
+    eval "$cmd"
+elif [ $de = ".de_gnome" ]; then
+    cmd='
+        apps_to_install=$YAY_GNOME_APPS
+        '
+    eval "$cmd"
+else
+    cmd='
+        echo "Not installing any DE specific AUR apps."
+        '
+    eval "$cmd"
+fi
+
+for app in $apps_to_install
+do
+    cmd='
+        if yay -Qs $app > /dev/null ; then
+          echo "$app already installed."
+        else
+          echo "Installing app: $app"
+          yay --noconfirm -S $app
+        fi
+    '
+    eval "$cmd"
+done
