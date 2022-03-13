@@ -166,7 +166,7 @@ git clone https://github.com/ninomarlou/arch-init.git
 # ------------------------------ THEMES ------------------------------
 # Set wallpaper
 gsettings set org.gnome.desktop.background picture-uri "file:///usr/share/backgrounds/nordic-wallpapers-git/gnu-linux.png"
-
+echo $de
 #de specific theme settings
 if [ $de = ".de_pantheon" ]; then
     cmd='
